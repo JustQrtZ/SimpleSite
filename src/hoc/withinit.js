@@ -10,7 +10,7 @@ const withInit = (Component) => {
 
     async componentDidMount() {
       await this.props.refreshToken()
-      //await this.props.getLogInUserFromAccessToken()
+      await this.props.getLogInUserFromAccessToken()
       this.setState({ isInit: true})
     }
 

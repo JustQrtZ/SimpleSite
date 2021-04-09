@@ -3,13 +3,13 @@ import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
 import Login from "../pages/login/login";
 import { path } from "./path";
 import { NotFound } from "../pages/notFaund/notFound";
-import { Registration } from "../pages/registration/registration";
+import  Registration from "../pages/registration/registration";
 import { useSelector } from "react-redux";
 import withInit from '../hoc/withinit'
 
 const Router = () => {
 	const isLogin = useSelector((state) => state.account.isLogIn);
-
+  console.log({isLogin})
 	return (
 		<BrowserRouter>
 			<Switch>
@@ -21,10 +21,18 @@ const Router = () => {
           )}
 				</Route>
 				<Route exact path={path.login}>
-					<Login />
+        {isLogin ? (
+            <Redirect to={path.main} />
+          ):(
+            <Login />
+          )}
 				</Route>
 				<Route exact path={path.signup}>
-					<Registration />
+        {isLogin ? (
+            <Redirect to={path.main} />
+          ):(
+            <Registration />
+          )}
 				</Route>
 				<Route path="*">
 					<NotFound />
