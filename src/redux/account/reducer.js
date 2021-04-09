@@ -6,6 +6,7 @@ const initialstate = {
 	isLogIn: false,
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialstate, action) => {
 	switch (action.type) {
 		case actions.signup:
