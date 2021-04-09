@@ -1,3 +1,4 @@
+export const REACT_APP_MAIN_API_URL= `https://webapp-210409124458.azurewebsites.net/api/`
 export const LOGIN = `auth/login`
 export const REGISTER = `auth/register`
 export const REFRESHTOKEN = 'token/refresh'

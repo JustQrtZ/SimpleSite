@@ -1,12 +1,12 @@
 import axios from "axios";
-import { REFRESHTOKEN } from "../const/api";
+import { REFRESHTOKEN, REACT_APP_MAIN_API_URL } from "../const/api";
 import { history } from "../utils/history";
 import { path } from "../routers/path";
 import { actions } from "../redux/account/const";
 import { getStore } from "../redux/store/createStore";
 
 const axiosInstance = axios.create({
-	baseURL: process.env.REACT_APP_MAIN_API_URL,
+	baseURL: REACT_APP_MAIN_API_URL,
 });
 
 export const request = (params, refresh = true) => {
