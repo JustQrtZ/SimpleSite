@@ -1,5 +1,5 @@
 export const actions = {
-  login: 'accountLogin',
-  signup: 'accountSignUp',
-  logout: 'accountLogout'
-} 
+	login: "accountLogin",
+	signup: "accountSignUp",
+	logout: "accountLogout",
+};

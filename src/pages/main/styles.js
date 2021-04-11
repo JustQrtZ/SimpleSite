@@ -14,3 +14,4 @@ export const Text = styled.p`
 	font-size: 60px;
 	text-align: center;
 `;
+

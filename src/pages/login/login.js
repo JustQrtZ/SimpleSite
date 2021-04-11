@@ -8,8 +8,8 @@ const Login = ({ submitLogin }) => {
 	const [state, setState] = useState({ email: "", password: "" });
 	const onChange = (field) => (event) => {
 		setState((state) => ({ ...state, [field]: event.target.value }));
-	};	
-	
+	};
+
 	return (
 		<S.Container>
 			<Form>
@@ -32,7 +32,12 @@ const Login = ({ submitLogin }) => {
 						onChange={onChange("password")}
 					/>
 				</Form.Group>
-				<Button variant="outline-primary" onClick={()=>submitLogin(state.email, state.password)}>Submit</Button>
+				<Button
+					variant="outline-primary"
+					onClick={() => submitLogin(state.email, state.password)}
+				>
+					Submit
+				</Button>
 				<p className="register text-center">
 					Don't have an account? <a href={"/signup"}>register!</a>
 				</p>

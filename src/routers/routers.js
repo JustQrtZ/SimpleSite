@@ -3,36 +3,25 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Login from "../pages/login/login";
 import { path } from "./path";
 import { NotFound } from "../pages/notFaund/notFound";
-import  Registration from "../pages/registration/registration";
+import Registration from "../pages/registration/registration";
 import { useSelector } from "react-redux";
-import withInit from '../hoc/withinit'
+import withInit from "../hoc/withinit";
+import Main from "../pages/main/main";
 
 const Router = () => {
 	const isLogin = useSelector((state) => state.account.isLogIn);
-  console.log({isLogin})
+	console.log({ isLogin });
 	return (
 		<BrowserRouter>
 			<Switch>
 				<Route exact path={path.main}>
-					{!isLogin ? (
-            <Redirect to={path.login} />
-          ):(
-            <div> HI </div>
-          )}
+					{!isLogin ? <Redirect to={path.login} /> : <Main />}
 				</Route>
 				<Route exact path={path.login}>
-        {isLogin ? (
-            <Redirect to={path.main} />
-          ):(
-            <Login />
-          )}
+					{isLogin ? <Redirect to={path.main} /> : <Login />}
 				</Route>
 				<Route exact path={path.signup}>
-        {isLogin ? (
-            <Redirect to={path.main} />
-          ):(
-            <Registration />
-          )}
+					{isLogin ? <Redirect to={path.main} /> : <Registration />}
 				</Route>
 				<Route path="*">
 					<NotFound />
@@ -42,4 +31,4 @@ const Router = () => {
 	);
 };
 
-export default withInit (Router)
+export default withInit(Router);
