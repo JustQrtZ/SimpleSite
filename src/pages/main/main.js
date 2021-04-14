@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./styles";
 import { Button, ButtonGroup } from "react-bootstrap";
 import { connect, useSelector, useDispatch } from "react-redux";
